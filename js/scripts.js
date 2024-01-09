@@ -63,5 +63,9 @@ createApp({
                 return '';
             }
         } */
+
+        changeActiveSlide(indiceDellaThumb) {
+            this.activeSlide = indiceDellaThumb
+        }
     }
 }).mount('#app');
