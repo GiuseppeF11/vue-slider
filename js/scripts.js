@@ -52,6 +52,16 @@ createApp({
             }else{
                 this.activeSlide = this.slides.length - 1;
             }
-        }
+        },
+
+        /* getActiveClass(i) {
+            if (this.activeSlide == i) {
+                return 'active';
+            }
+            
+            else {
+                return '';
+            }
+        } */
     }
 }).mount('#app');
