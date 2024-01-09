@@ -67,5 +67,13 @@ createApp({
         changeActiveSlide(indiceDellaThumb) {
             this.activeSlide = indiceDellaThumb
         }
+    },
+
+    mounted() {
+        /* setInterval(() =>  {
+            this.nextSlide();
+        }, 3000); */
+
+        setInterval(this.nextSlide, 3000);
     }
 }).mount('#app');
