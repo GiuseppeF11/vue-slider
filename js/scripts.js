@@ -33,9 +33,10 @@ createApp({
                     image: 'img/05.webp',
                     title: "Marvel's Avengers",
                     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
-                }
-            ]
-        }
+                }                
+            ],
+            autoplay : null
+        };
     },
     methods: {
         nextSlide() {
@@ -66,6 +67,19 @@ createApp({
 
         changeActiveSlide(indiceDellaThumb) {
             this.activeSlide = indiceDellaThumb
+        },
+
+        startAutoplay() {
+            this.autoplay = setInterval(this.nextSlide, 3000);
+        },
+
+        handleEnterOnSlider() {
+            clearInterval(this.autoplay);
+            this.autoplay = null;
+        },
+
+        handleLeaveSlider() {
+            this.startAutoplay();
         }
     },
 
@@ -74,6 +88,6 @@ createApp({
             this.nextSlide();
         }, 3000); */
 
-        setInterval(this.nextSlide, 3000);
+        this.autoplay = setInterval(this.nextSlide, 3000);
     }
 }).mount('#app');
